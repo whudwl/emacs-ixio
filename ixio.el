@@ -54,7 +54,7 @@
          url-request-data)
     (when (and ixio-login ixio-token)
       (push (cons "login" ixio-login) args)
-      (push (cons "token" ixio-login) args))
+      (push (cons "token" ixio-token) args))
     (push (cons "f:1" (buffer-substring beg end)) args)
     (setq url-request-data (ixio-urlencode args))
     (with-current-buffer (url-retrieve-synchronously url)
